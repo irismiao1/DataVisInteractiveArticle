@@ -14,7 +14,7 @@ https://docs.google.com/document/d/15QsTk-GqfIaQQwcFzyt14QkcAVWd38M-AhgRLxhxFfU/
 ## Link to Video:
 
 ## Running Instructions for Software:
-Download the github repo and open the HTML file. 
+Download the github repo and open the file *index.html*. The application should run on your local server. 
 
 ## Breakdown:
 We decided on utilizing the FiveThirtyEight collectively as a group. Iris and Jaemin took the lead on performing our EDA, creating the linear regression models and the pairs plot initially in R, while Darren and Iris were mainly responsible for working on creating the interactive choropleth map. Once we were finished with our visualizations, we met as a group to collectively work on the analysis and interpretation. We mainly collaborated virtually through Google Drive, Github, and Zoom meetings, as well as having a few meetings in person on campus.
