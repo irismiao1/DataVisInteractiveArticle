@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hate Crimes</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid py-5">
+      <!-- Title -->
+      <h1>Exploring Socioeconomic Factors in Correlation to Hate Crimes
+      </h1>
+      <h3>By: Darren Mok, Jaemin Lee, Iris Miao, Ellen Kahng  </h3>
+      <!-- Intro -->
+      <h2> Introduction </h2>
+      <p>
+        As of recent history, hate crimes have become an unfortunate growing presence in the vacillating political landscape of the United States. In an effort to better understand how socioeconomic factors affect hate crimes, we examined a data set provided from FiveThirtyEight that utilizes data from the Southern Poverty Law Center (SPLC)  exploring the sudden influx in hate crimes that occured ten days after the presidential election in 2016, FBI data that documents hate crimes reported from 2010 through 2015, and socioeconomic factors such as median household income, share of the population that is unemployed and more.
+      </p>
+      <p>
+        In the original article exploring this data set, we learn that the analysis conducted by the original researchers found that only two variables remained significant in both model inputs pre and post election: income inequality (gini_index) and education (share_population_with_high_school_degree). Within our own research, we hoped to learn more about the correlation between these variables, in addition to the share of U.S. voters who voted for Trump in the 2016 presidential election. Since 2016, it is fair to say that the country has become significantly more divided on political issues, with BLM protests and the United States Capitol attack taking place in 2021. Our motivation is for our analysis and visualization of the data set to provide more insight into how these various factors trend in regards to each other, how hate crimes vary by state, as well as what factors within those states might be tied to hate crime rates.
+
+      </p>
+      <h2> Hypothesis </h2> 
+      <p>
+        After reading the article from the dataset, we decided to come up with a few hypotheses of our own to try and get a better understanding of the data and establish potential routes of visualization. They are as follows: 
+      </p> 
+      <ol>
+        <li>
+         Average annual hate crime can be predicted by certain social and economic factors at the state level. 
+      </li>
+      <li>
+        The most important predictors of average annual hate crime are the share of 2016 US presidential voters who voted for Donald Trump, income inequality as given by the Gini Index, and the share of adults 25 and older with a high school degree.  
+      </li>
+      <li>
+         By creating an interactive choropleth map, we will be able to take away more insights and further strengthen our previous hypotheses. 
+      </li>
+    </ol>
+      <h2>Data Exploration</h2>
+      
+      <p>To answer these questions, we created several initial graphs to give us a better understanding of how to approach our final visualization. We can see from the pairs plot that the 3 variables, share_population_with_high_school_dergee, gini_index, and share_voters_voted_trump, have some sort of correlation with avg_hatecrimes_per_100k. While the share of population with high school degrees has the lowest correlation coefficient out of the two variables, our research into related work showed that education plays an important role in average hate crime and, thus, thought it was worthwhile to keep and further look into this variable. Another notable point from the pairs plot is that the share of 2016 US presidential voters who voted for Trump has a negative correlation with average annual hate crime. 
+      </p>
+      <p>
+      <img src = "pairsplot.png" alt = "Pairs Plot">
+    </p>
+
+    <p>Next, we delve into the 3 predictors and created individual scatterplots to clarify individual relationships with average annual hate crimes. To briefly comment on each plot: 
+      <li>From the scatterplot of 2016 US voters who voted for Donald Trump against annual average hate crime, only those regions that have higher share of population values were reported to have any average hate crimes at all, disregarding the outlier. 
+      </li>
+      <li>From the scatterplot of income inequality against annual average hate crime, there is a slight increase in annual average hate crime as the Gini Index increases. Though it may seem small, we must consider the fact that any increase or decrease in the Gini Index is significant as it is a ratio of 1. 
+      </li>
+      <li>
+        From the scatterplot of adults 25 and older with a high school degree against annual average hate crime, we do not see any general trends. However, we are looking at regions on a linear scatterplot which may limit our insights and further exploration should be done. 
+      </li>
+    </p>
+
+    <p>
+    <img src = "scatterTrump.png" alt = "Pairs Plot">
+  </p>
+  <p>
+    <img src = "scatterIncome.png" alt = "Pairs Plot">
+  </p>
+  <p>
+    <img src = "scatterDegree.png" alt = "Pairs Plot">
+  </p>
+
+      <p>
+        From our EDA, the insights that we got were consistent with our hypotheses: There was a story to be told with the 3 predictors about annual average hate crime. Something that our scatterplots lacked was the ability to compare across variables and between states. Thus, we decided the best way to visualize this data was with a choropleth map which would allow us to visualize comparisons and similarities while preserving the integrity of individual state information.
+      </p>
+      
+
+
+      <h2>Final Visualization</h2>
+      <p>
+        The overarching problem that this map seeks to address is whether there is a strong correlation between any of these variables in relation to the number of hate crimes. While we were able to find correlation coefficients within our EDA, our visualization allows for users to easily compare these variables state by state easily. For example, when initially interpreting the map and analyzing the average annual hate crimes per 100,000 population, FBI, 2010-2015, we can see that North Dakota scores very highly compared to the rest of the nation and has a value of 4.7. In order to understand this state better, we can look into how the share of 2016 U.S. presidential voters who voted for Trump; by simply changing the toggle, we can see that North Dakota also had a high percentage of 64%. Furthermore, we can observe that it has a Gini Index of 0.433, and a whopping 0.901 share of adults 25 and older with a high-school degree.
+
+      </p>
+      <!-- Variable toggle -->
+      <fieldset class="row mb-5">
+        <legend class="col-form-label col-sm-auto pt-0">Predictors:</legend>
+        <div class="col-sm" id="variable-toggles"> </div>
+      </fieldset>
+      <!-- Color legend -->
+      <div>
+        <div id="legend-container"></div>
+      </div>
+      <!-- Choropleth -->
+      <div class="mb-5">
+        <div id="chart-container"></div>
+      </div>
+      <!-- Footer -->
+      <footer class="text-black-50">
+        <p>Data source:
+          <a
+            href="https://github.com/fivethirtyeight/data/tree/master/hate-crimes"
+            >Hate Crimes dataset from FiveThirtyEight</a></p>
+
+      </footer>
+      <p>
+        We believe that our visualization makes for an easy, digestible way for even those without a lot of previous knowledge about socioeconomic variables to understand the factors at play in regards to hate crimes per state. It also allows for our users to actively explore what variables hold greater significance in certain states, and which ones have unique outliers.
+        </p>
+        <p>
+For example, an individual may be interested in parsing through such data if they were to move to a new state and wanted to gauge hate crimes in that state. The toggle allows users to focus solely on hate crime numbers, and provides an easily understandable color-coded comparison method for visual analysis. Further, this visualization acts as a foundation for those interested in social justice issues and want to understand how a predictor can cause more or less annual average hate crimes. For example, if someone was interested in exploring the Gini Index and how income inequality affects different states, they would be able to toggle between that particular variable and get state specific information as well as compare it with other predictors. 
+</p>
+<p>
+Additionally, although the other socioeconomic factors were included in the toggle mainly to determine correlation to average annual hate crimes, separately, they also provide important data that an individual can utilize to get a holistic understanding of the state at a glance.
+
+      </p>
+    
+      <h2>Future Work</h2>
+      <p>
+        There is a lot of future work that can be done to try to better utilize this information to try to make real change within communities. First and foremost, we believe that this information would still be relevant to hate crimes today, especially with the data over the past two years. Future studies should be encouraged for continued data collection; our choropleth graph will still be able to provide valuable insight regarding state by state correlation to each of these socioeconomic variables, as well as explore how these relationships have changed and developed over the course of 5+ years. This way, we can try to identify key factors that are correlated and lead to more hate crimes.
+      </p>
+      <p>
+
+      If this is the case, we could consider creating several choropleth graphs each focused on different time periods that cover the same various socioeconomic variables. This would allow users to have an easier time identifying how trends have changed over time and easily compare them without having an overwhelming amount of toggles on one visualization that could compromise usability.
+      </p>
+      <p>
+      We feel that with the insight that our visualization can bring, in addition to the information we discovered through our EDA, to cause real change in minimizing hate crimes across the country, this information could be brought to local NGOs within specific states to try to  influence policy makers and legislation to address these issues and work on lowering hate crimes.
+      </p>
+    </div>
+    <!-- D3 JS -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Topojson JS -->
+    <script src="https://unpkg.com/topojson@3"></script>
+    <!-- Custom JS -->
+    <script src="js/color-legend.js"></script>
+    <script src="js/tooltip.js"></script>
+    <script src="js/choropleth.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

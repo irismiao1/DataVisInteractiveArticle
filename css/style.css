@@ -1,0 +1,44 @@
+.container-fluid {
+  max-width: 960px;
+}
+
+/* Color legend */
+.chart-color-legend {
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.chart-color-legend .legend-title {
+  font-size: 0.875rem;
+}
+
+/* Choropleth */
+.chart-choropleth {
+  color: #aaa;
+}
+
+.chart-choropleth .state-no-data-label {
+  /* Add a white halo so the labels are easier to read */
+  stroke: #fff;
+  stroke-width: 3px;
+  paint-order: stroke fill;
+}
+
+.chart-choropleth .state-g:hover .state-path {
+  color: #000;
+  stroke-width: 1.5px;
+}
+
+/* Tooltip */
+.chart-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.chart-tooltip.is-active {
+  opacity: 1;
+}
