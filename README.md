@@ -8,13 +8,13 @@ For our visualization, we started by initially performing an EDA on the four var
 
 We believe that with continued data collection, our visualization can bring useful insight on a state to state basis. To cause real change in minimizing hate crimes across the country, this information could be brought to local NGOs within specific states to try to  influence policy makers and legislation to address these issues and work on lowering hate crimes.
 
-## Link to Paper:
-https://docs.google.com/document/d/15QsTk-GqfIaQQwcFzyt14QkcAVWd38M-AhgRLxhxFfU/edit
+## Link to Report:
+https://docs.google.com/document/d/15QsTk-GqfIaQQwcFzyt14QkcAVWd38M-AhgRLxhxFfU/edit?usp=sharing
 
 ## Link to Video:
 
 ## Running Instructions for Software:
-Open the HTML file
+Download the github repo and open the HTML file. 
 
 ## Breakdown:
 We decided on utilizing the FiveThirtyEight collectively as a group. Iris and Jaemin took the lead on performing our EDA, creating the linear regression models and the pairs plot initially in R, while Darren and Iris were mainly responsible for working on creating the interactive choropleth map. Once we were finished with our visualizations, we met as a group to collectively work on the analysis and interpretation. We mainly collaborated virtually through Google Drive, Github, and Zoom meetings, as well as having a few meetings in person on campus.
