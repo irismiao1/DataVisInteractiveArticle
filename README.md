@@ -1,6 +1,6 @@
 # Exploring Socioeconomic Factors in Correlation to Hate Crimes 
 ### By: Darren Mok, Jaemin Lee, Iris Miao, Ellen Kahng
-## H1 Abstract:
+## Abstract:
 
 There has been a growing number of occurrences of hate crimes in recent history within the United States. To better understand how different socioeconomic factors affect hate crimes, we examined a data set provided from FiveThirtyEight that utilizes data from the Southern Poverty Law Center (SPLC) exploring the sudden influx in hate crimes that occured ten days after the presidential election in 2016, FBI data that documents hate crimes reported from 2010 through 2015, and socioeconomic factors such as median household income, share of the population that is unemployed and more. Our goal was to provide more insight into how these various factors trend in regards to each other, how hate crimes vary by state, as well as what factors within those states might be tied to hate crime rates.
 
