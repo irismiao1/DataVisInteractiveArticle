@@ -15,6 +15,7 @@ https://irismiao1.github.io/DataVisInteractiveArticle/
 https://docs.google.com/document/d/15QsTk-GqfIaQQwcFzyt14QkcAVWd38M-AhgRLxhxFfU/edit?usp=sharing
 
 ## Link to Video
+https://www.youtube.com/watch?v=IWXVXEeHvnw
 
 ## Running Instructions for Software
 Click on the link provided above. Optionally, you can download the github repo and open the file *index.html*. The application should run on your local server.
